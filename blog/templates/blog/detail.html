@@ -1,0 +1,66 @@
+{% load static %}
+
+<div class="container">
+    <img src="{% static "HomeApp/Images/EMB.logo.png" %}"/>
+    <div class="tittle">
+        <h2>{{ blog.tittle }}</h2>
+    </div>
+
+    <div class="date">
+        <h3>---{{ blog.date|date:"l, F j, Y"}}---</h3>
+    </div>
+
+    <div class="center-box">
+        {{ blog.description|safe}}
+
+    </div>
+   
+    
+</div>
+
+<style>
+    .container{
+        width:80%;
+        height:100%;
+        margin:10px;
+        margin-left: 10%;
+        padding:5px;
+        border:solid;
+        background-color:rgba(255, 255, 255, 0.86);
+       
+    }
+    .tittle{
+        font-style: bold;
+        display:flex;
+        justify-content: center;
+    }
+    h2{
+        font-size: 2rem;
+        text-decoration: underline;
+    }
+    .date{
+        display: flex;
+        justify-content: right;
+    }
+    h3{
+        font-style: italic;
+
+    }
+    .center-box{
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    img{
+        width: 20%;
+        height: 20%;
+        display:flex;
+        justify-content: center;
+    }
+</style>
+
+
+
+
+
+

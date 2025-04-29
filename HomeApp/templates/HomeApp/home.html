@@ -1,0 +1,234 @@
+<body>
+   {% extends "HomeApp/base.html" %}
+   {% load static %}
+   {% block title %}Home{% endblock title %}
+
+   {% block slider %}
+   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <img src="{% static "HomeApp/Images/Emb cover page.jpg" %}" class="d-block w-100" alt="banner 1">
+            </div>
+            <div class="carousel-item">
+               <img src="{% static "HomeApp/Images/Emb cover 2.jpg" %}" class="d-block w-100" alt="banner 2">
+            </div>
+            <div class="carousel-item">
+               <img src="{% static "HomeApp/Images/Emb cover 3.jpg" %}" class="d-block w-100" alt="banner 3">
+            </div>
+         </div>
+   </div>
+   <style>
+      #carouselExampleSlidesOnly{
+         margin-top:-10px;
+      }
+   </style>
+   {% endblock slider %}
+
+   {% block main-content%}
+
+      <div class="main-container">
+         <h2>Welcome to Embizweni High School</h2 > 
+      </div>
+      <style>
+         .main-container{
+            background:rgb(141, 16, 16);
+            color: white;
+         }
+         .main-container > h2{
+            text-shadow: 1px 2px black;
+            font-size: 2.5rem;
+         }
+      </style>
+   {% endblock %}
+
+   {% block information %}
+      <div class="container">
+         <h2 id="school-info">School Information</h2>
+         <small class="fs-5"> Embizwen High School is a goverment funded school based at umlazi F section,
+            under umxenge circuit. Our school has been recorgnised as one of the best performing schools in past 5 years,
+            and produce top achivers within the circuit.</small>
+      </div>
+   
+      <style>
+         .container{
+            background:rgb(144, 38, 38);
+            color: white;
+            max-width: 90%;
+            border:none black;
+            margin-top: -9px;
+            border-radius: 5px;
+            border-shadow: 5px rgba(145, 120, 120, 0.35);
+         }
+         h2{
+            display: flex;
+            justify-content: center;
+            
+         }
+         #school-info{
+            text-decoration: underline;
+            text-shadow: 1px 1px black;
+            font-size: 1.5rem;
+            padding:5px;
+
+         }
+
+      </style>
+   {% endblock %}
+   
+   {% block TopAch-container %}
+     <div class="gridHolder">
+      <h3 id="TopStd">Top performing Students</h3>
+       <div class="row">
+            <div class="TopAch-container">
+               
+              <div class="cardHolder">
+                  <div class="card">
+                     <div class="card-hearder">
+                        <img src={% static 'HomeApp/Images/user.png' %}>
+         
+                     </div>
+                     <div class="card-body">
+                        name:</br>
+                        circuit position 
+                     </div>
+                     <div class="card-footer">
+                        
+                        <p>year of completion</p>
+                     </div>
+         
+                  </div>
+                  <div class="card">
+                     <div class="card-hearder">
+                        <img src={% static 'HomeApp/Images/user.png' %}>
+         
+                     </div>
+                     <div class="card-body">
+                        name:</br>
+                        circuit position 
+                     </div>
+                     <div class="card-footer">
+                        
+                        <p>year of completion</p>
+                     </div>
+         
+                  </div>
+                  <div class="card">
+                     <div class="card-hearder">
+                        <img src={% static 'HomeApp/Images/user.png' %}>
+         
+                     </div>
+                     <div class="card-body">
+                        name:</br>
+                        circuit position 
+                     </div>
+                     <div class="card-footer">
+                        
+                        <p>year of completion</p>
+                     </div>
+         
+                  </div>
+                  <div class="card">
+                     <div class="card-hearder">
+                        <img src={% static 'HomeApp/Images/user.png' %}>
+         
+                     </div>
+                     <div class="card-body">
+                        name:</br>
+                        circuit position 
+                     </div>
+                     <div class="card-footer">
+                        
+                        <p>year of completion</p>
+                     </div>
+         
+                  </div>
+                  <div class="card">
+                     <div class="card-hearder">
+                        <img src={% static 'HomeApp/Images/user.png' %}>
+         
+                     </div>
+                     <div class="card-body">
+                        name:</br>
+                        circuit position 
+                     </div>
+                     <div class="card-footer">
+                        
+                        <p>year of completion</p>
+                     </div>
+         
+                  </div>
+                  <div class="card">
+                     <div class="card-hearder">
+                        <img src={% static 'HomeApp/Images/user.png' %}>
+         
+                     </div>
+                     <div class="card-body">
+                        name:</br>
+                        circuit position 
+                     </div>
+                     <div class="card-footer">
+                        
+                        <p>year of completion</p>
+                     </div>
+         
+                  </div>
+                  
+               </div>
+      
+         </div>
+       </div>
+     </div>
+     <style>
+      .gridHolder{
+         border: solid maroon;
+         margin: 20px;
+         padding: 10px;
+         margin-right: 10px;
+      }
+      .row{
+         display: flex;
+         justify-content: center;
+         {% comment %} align-items: center;
+         flex-wrap: wrap;{% endcomment %}
+         border: solid; 
+         {% comment %} width: 90%; {% endcomment %}
+         margin: 50px;
+         margin-right:50px;
+      }
+      .cardHolder{
+         padding:0.5rem;
+         display:flex;
+         justify-content:center
+         border: solid red;
+         flex-wrap: wrap;
+         
+      } 
+      .card{
+         width: 300px;
+         margin:10px;
+         {% comment %} margin-right: 20x; {% endcomment %}
+         border: none;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+         {% comment %} float: left; {% endcomment %}
+         border-radius: 5px;
+         {% comment %} display: flex;
+         justify-content: center; {% endcomment %}
+         
+      }
+      .card-hearder > img{
+         width: 100%;
+         height: 100%;
+      }
+      #TopStd{
+         display: flex;
+         justify-content: center;
+         padding: 10px;
+         font-size: 2rem;
+         text-shadow: 1px 1px black;
+         color: maroon;
+         text-decoration: underline;
+      }
+     </style>
+   {% endblock TopAch-container %}
+
+</body>

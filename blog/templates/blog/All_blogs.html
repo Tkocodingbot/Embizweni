@@ -1,0 +1,60 @@
+{% load static %}
+<body>
+    <div class="tittle">
+        <p>Welcome to EMBIZWENI HIGH SCHOOL Blog</p>
+    </div>
+    
+    {% for blog in blogs %}
+    
+    
+    
+    <div class="container">
+        
+        <a href="{% url "blog:detail" blog.id %}"><h3>{{ blog.tittle }}</h3></a>
+        <h5>{{ blog.date}}</h5>
+        <p>{{ blog.description| truncatechars:100}} 
+    </div>
+    
+    {% endfor %}
+</body>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-image: url("{% static 'HomeApp/Images/sc.bg.jpg'%}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachement: fixed;
+        background-position: center;  
+    }
+    .container{
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+        background-color: rgba(255, 255, 255, 0.77);
+        max-width: 95%;
+        margin: 15px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .tittle{
+        display:flex;
+        justify-content: center;
+        color: white;
+        font-style: bold;
+        text-shadow: 1px 1px maroon;
+        
+        
+
+    }
+    .tittle > p{
+        font-size: 2rem;
+        text-decoration:underline rgb(255, 255, 255);
+        font-weight: bold;
+
+    }
+    a{
+        color: black;
+    }
+
+</style>
