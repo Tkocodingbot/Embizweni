@@ -11,52 +11,74 @@
 
   <body>
     <nav class="navbar navbar-expand-lg ">
+      {% if user.is_authenticated %}
         <div class="container-fluid" style= "background-color: maroon;">
 
             <a class="navbar-brand" href="#">
-                <img src="{% static "/HomeApp/Images/Emb logo 3.png" %}" width=70,height=50 >
+              <img src="{% static "/HomeApp/Images/Emb logo 3.png" %}" width=70,height=50 >
             </a>
            <button class="navbar-toggler border border-3 border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon "></span>
            </button>
-         <div class="collapse navbar-collapse justify-content-center" id="navbarNav" >
-               <ul class="navbar-nav text-white">
-                   <li class="nav-item">
-                     <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link text-white" href="{% url 'About'%}">About Us</a>
-                   </li>
-                   <li class="nav-item">
-                     <a class="nav-link text-white" href="{% url 'Contact'%}">Contact</a>
-                   </li>
-                   <li class="nav-item">
-                     <a class="nav-link text-white" href="{% url 'blog:All_blogs'%}">Blog</a>
-                   </li>
-               </ul>
-               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item mx-2">
-                    <a href="{% url "login" %}" class="nav-link text-white">Login</a>
-                  </li>
-                  <li class="nav-item mx-2">
-                    <a href="{% url 'signupuser' %}" class="nav-link text-white">Registration</a>
-                  </li>
-                  
-               </ul>
-           </div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav" >
+              <ul class="navbar-nav text-white">
+                <li class="nav-item">
+                  <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'About'%}">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'Contact'%}">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'blog:All_blogs'%}">Blog</a>
+                </li>
+              </ul>  
+            </div>
+
            
+           <div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown mx-2">
+                  <a class = "nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" arial-expanded="false" style="margin-right:90px">{{user.username}}</a>
+                    <ul class="dropdown-menu" arial-labelledby="profileDropdown">
+                      <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                      <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
+                      <li><a class="dropdown-item" href='logout'>Logout</a></li>
+                    <ul>
+               </li>
+                
+              </ul>
+              
+           </div>
+      
+          {% else %}
+            <div>
+              <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-2">
+                  <a href="{% url "login" %}" class="nav-link text-white">Login</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a href="{% url 'signupuser' %}" class="nav-link text-white">Registration</a>  
+                </li>
+              </ul> 
+
+            </div>  
         </div>
+      {% endif %}
 
+      <style>
+        .container-fluid{
+          margin-top: -10px;
+          
 
-        <style>
-          .container-fluid{
-            margin-top: -10px;
-          }
-          ul{
+        }
+          {% comment %} ul{
             display:flex;
             justify-content: space-between;
-          }
-        </style>
+          } {% endcomment %}
+      </style>
 
     </nav>
 

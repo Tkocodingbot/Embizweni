@@ -121,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
+LOGIN_REDIRECT_URL = '/profile/'  # this is where user get directed after logging in to the system
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static')
 ]
